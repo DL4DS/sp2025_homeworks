@@ -1,0 +1,75 @@
+\documentclass[10pt]{article}
+\usepackage{amsmath, amssymb}
+\usepackage{hyperref}
+\begin{document}
+
+\begin{center}
+    \LARGE {Problem Set 5 - Regularization} \\[1em]
+    \Large{DS542 – DL4DS} \\[0.5em]
+    \large Spring, 2025
+\end{center}
+
+\vspace{2em}
+
+\noindent\textbf{Note:} Refer to the equations in the \textit{Understanding Deep Learning} 
+textbook to solve the following problems.
+
+\section*{AI/Correction Statement (1 point)}
+
+You may use ChatGPT/Generative AI as a resource to help you complete the assignment. 
+However, it must be used constructively to help you understand things you are 
+unsure of, and be built upon with original work.
+
+You must cite your interaction by describing your prompt and the corresponding response. 
+In addition, you must  explain all output from the AI that you implement in your 
+assignment. Failure to do so could result in credit deduction. 
+
+The official GAIA Policy can be found 
+\href{https://www.bu.edu/cds-faculty/culture-community/gaia-policy/}{here}.
+
+Moreover, if this is a correction submission after the initial submission, 
+you must provide a reflection on what you learned from the initial submission 
+and how you corrected it.
+
+\vspace{3em}
+
+\section*{Problem 9.1 (4 points)}
+Consider a model where the prior distribution over the parameters is a normal distribution with mean zero and variance
+$\sigma^2_{\phi}$ so that
+
+\begin{equation}
+    Pr(\phi) = \prod_{j=1}^{J} \mathcal{N}(\phi_j | 0, \sigma^2_{\phi}),
+\end{equation}
+
+\noindent where $j$ indexes the model parameters. When we apply a prior, we maximize
+
+\begin{equation}
+    \prod_{i=1}^{I} Pr(y_i | x_i, \phi) Pr(\phi).
+\end{equation}
+
+Show that the associated loss function of this model is equivalent to L2 regularization.
+
+\vspace{3em}
+
+\section*{Problem 9.5 (4 points)}
+
+Show that the weight decay parameter update with decay rate $\lambda$:
+
+\begin{equation}
+    \phi \leftarrow (1 - \lambda) \phi - \alpha \frac{\partial L}{\partial \phi},
+\end{equation}
+
+\noindent on the original loss function $L[\phi]$ is equivalent to a standard
+gradient update using L2 regularization, so that the modified loss function
+$\tilde{L}[\phi]$ is:
+
+\begin{equation}
+    \tilde{L}[\phi] = L[\phi] + \frac{\lambda}{2\alpha} \sum_{k} \phi_k^2,
+\end{equation}
+
+where $\phi$ represents the parameters, and $\alpha$ is the learning rate.
+
+
+
+
+\end{document}
